@@ -1,3 +1,5 @@
 .venv
-main_page/__pycache__
+main_app/__pycache__
 write_blog/__pycache__
+auth_app/__pycache__
+profile_app/__pycache__
