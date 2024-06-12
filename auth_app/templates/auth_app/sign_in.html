@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>main_page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <figure class="text-center">
+        <h1 class="display-1">регистрация</h1>
+    </figure>
+
+    <form method='POST' class="form-control form-control-lg">
+        <div >
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <div class="input-group mb-3" >
+                        <span class="input-group-text" id="basic-addon1">Username</span>
+                        <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"name="username" maxlength="15" minlength="4" pattern="^[a-zA-Z0-9_.-]*$">
+                    </div>            
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+                        <input type="password" class="form-control" minlength="6" aria-label="password1" aria-describedby="ibasic-addon1" name="password1" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Repeat password</span>
+                        <input type="password" class="form-control" minlength="6" aria-label="password2" aria-describedby="ibasic-addon1" name="password2" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">email</span>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com" required>
+                
+                    </div>
+                </div>
+            </div>
+                
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <button class="btn btn-primary btn-block create-account" type="submit">Зарегистрироваться</button>
+                </div>
+            </div>
+        </div>
+        
+        {% csrf_token %}
+    </form>
+    <div class="alert alert-primary" role="alert">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <h3>{{error}}</h3>
+            </div>
+        <div>
+    </div>
+    
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <div class="group mb-3" >
+                
+                <a class="btn btn-primary" href={% url 'log_in' %} role="button">Войти</a>
+
+                <a class="btn btn-primary" href={% url 'index_page' %} role="button">На главную</a>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
