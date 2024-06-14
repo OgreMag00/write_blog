@@ -7,9 +7,15 @@
 </head>
 <body>
     <h1>main app write blog</h1>
-
-    <a class="btn btn-primary" href={% url 'log_in' %} role="button">Войти</a>
-    <a class="btn btn-primary" href={% url 'sign_in' %} role="button">Зарегистрироваться</a>
-
+    {{ user }}
+    
+    {% if user.is_authenticated %}
+        <a class="btn btn-primary" href={% url 'profile_index' %} role="button">profile</a>
+        <a class="btn btn-primary" href={% url 'logout' %} role="button">Выйти</a>
+    {%else%}
+        <a class="btn btn-primary" href={% url 'log_in' %} role="button">Войти</a>
+        <a class="btn btn-primary" href={% url 'sign_in' %} role="button">Зарегистрироваться</a>
+    {%endif%}
+    
 </body>
 </html>

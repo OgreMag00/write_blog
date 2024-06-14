@@ -62,3 +62,7 @@ def log_in(request):
 
     else:
         return render(request, 'auth_app/log_in.html')
+
+def log_out(request):
+    logout(request)
+    return redirect('/')
