@@ -14,15 +14,16 @@
     {%if user.is_authenticated%}
         <div class="container-md">
             <br></br>
-            <figure>
-                <figure class="text-center">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
                     <h1>Профиль</h1>
-                    <a type="button" class="btn btn-outline-success" href={% url 'new_post_page' %} role="button">Написать пост</a>
-                    <a type="button" class="btn btn-outline-dark" href={% url 'index_page' %} role="button">На главную</a>
-                    
-                </figure>
-            </figure>
-            
+                    <figure class="text-end">
+                        <a type="button" class="btn btn-outline-success btn-lg" href={% url 'new_post_page' %} role="button">Написать пост</a>
+                        <a type="button" class="btn btn-outline-dark btn-lg" href={% url 'index_page' %} role="button">На главную</a>
+                        <a class="btn btn-outline-danger btn-lg" href={% url 'logout' %} role="button">Выйти</a>
+                    </figure>
+                </div>
+            </nav>
         </div>
 
         
