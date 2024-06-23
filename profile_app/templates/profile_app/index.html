@@ -48,6 +48,9 @@
                         <footer class="blockquote">{{ d.content }}</footer>
                         <figure class="text-end"><h6>{{d.username}}, <em>{{ d.date }}</em></h6></figure>
                     </blockquote>
+                    <a type="button" class="btn btn-outline-success btn-lg" href={% url 'change_post' d.id %} role="button">Изменить</a>
+                    <a type="button" class="btn btn-outline-dark btn-lg" href={% url 'to_draft_post' d.id %} role="button">Скрыть</a>
+                    <a type="button" class="btn btn-outline-danger btn-lg" href={% url 'delete_post' d.id %} role="button">Удалить</a>
                 </div>
             </div>
                 

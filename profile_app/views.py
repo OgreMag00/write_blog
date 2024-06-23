@@ -8,7 +8,7 @@ def index(request):
     
     for i in Text_post.objects.all().filter(username=request.user.username):
         if i.was_published:
-            data.insert(0, {'title':i.title, 'content':i.content, 'date':i.was_published_recently(), 'username':i.username})
+            data.insert(0, {"id": i.id,'title':i.title, 'content':i.content, 'date':i.was_published_recently(), 'username':i.username})
         
     context = {'data': data}
     return render(request, 'profile_app/index.html', context=context)

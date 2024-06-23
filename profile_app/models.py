@@ -36,6 +36,15 @@ class Text_post(models.Model):
     def was_pub(self):
         self.was_published = True
         self.save()
-    
+        
+    def to_draft(self):
+        self.was_published = False
+        self.save(update_fields=["was_published"])
+        
+    def change(self, title, content):
+        self.title = title
+        self.content = content
+        self.save(update_fields=["title","content"])
+        
     def delete_post(self):
         self.delete()
